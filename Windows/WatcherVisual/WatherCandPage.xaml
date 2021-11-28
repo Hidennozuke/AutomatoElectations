@@ -8,7 +8,7 @@
       ShowsNavigationUI="False"
       d:DesignHeight="850" d:DesignWidth="1235"
       Title="WatherCandPage"
-      >
+             >
 
     <Grid Background="Transparent">
         <Grid.RowDefinitions>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f34e20cef0e84cddb0cd30b1d5812491" Name="Diagram1">
+        <EntityTypeShape EntityType="ElectationsModel.Bulletin" Width="1.5" PointX="8.25" PointY="4.375" />
+        <EntityTypeShape EntityType="ElectationsModel.Candidate" Width="1.5" PointX="6" PointY="3.625" />
+        <EntityTypeShape EntityType="ElectationsModel.Gender" Width="1.5" PointX="0.75" PointY="4.5" />
+        <EntityTypeShape EntityType="ElectationsModel.Member" Width="1.5" PointX="3" PointY="3.5" />
+        <EntityTypeShape EntityType="ElectationsModel.PartysList" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ElectationsModel.PasData" Width="1.5" PointX="3.75" PointY="8.125" />
+        <EntityTypeShape EntityType="ElectationsModel.Role" Width="1.5" PointX="0.75" PointY="1.625" />
+        <EntityTypeShape EntityType="ElectationsModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="7.875" />
+        <EntityTypeShape EntityType="ElectationsModel.CandidatsCurrentDisplay" Width="1.5" PointX="7.75" PointY="7.875" />
+        <EntityTypeShape EntityType="ElectationsModel.VotersCurrentDisplay" Width="1.5" PointX="0.75" PointY="8.875" />
+        <AssociationConnector Association="ElectationsModel.FK_Bulletin_Candidate" />
+        <AssociationConnector Association="ElectationsModel.FK_Candidate_Gender1" />
+        <AssociationConnector Association="ElectationsModel.FK_Candidate_PartysList1" />
+        <AssociationConnector Association="ElectationsModel.FK_Candidate_PasData1" />
+        <AssociationConnector Association="ElectationsModel.FK_Commisioner_Gender" />
+        <AssociationConnector Association="ElectationsModel.FK_Member_PasData" />
+        <AssociationConnector Association="ElectationsModel.FK_Member_Role1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

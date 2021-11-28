@@ -1,0 +1,125 @@
+﻿<Page x:Class="AutomatoElectations.Windows.WatcherVisual.WatcherPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AutomatoElectations.Windows.WatcherVisual"
+      mc:Ignorable="d"
+      d:DesignHeight="850" d:DesignWidth="1235" 
+      Title="WatcherPage">
+
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="55*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="75*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="1"
+                    Grid.Row="1">
+
+            <TextBlock Text="Избиратели"
+                       HorizontalAlignment="Center"
+                       Style="{DynamicResource NameDispalay}">
+            </TextBlock>
+
+            <ListView x:Name="SuperView"
+                      BorderBrush="Transparent"
+                      Width="1150"
+                      Height="550"
+                      Margin="20,10,20,0"
+                      FontSize="20"
+                      FontFamily="Roboto"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"
+                      SelectionChanged="SuperView_SelectionChanged">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn x:Name="SName" Header="Фамилия" Width="220" DisplayMemberBinding="{Binding SName}"/>
+                        <GridViewColumn x:Name="FName" Header="Имя" Width="220" DisplayMemberBinding="{Binding FName}" />
+                        <GridViewColumn x:Name="PName" Header="Отчество" Width="220" DisplayMemberBinding="{Binding PName}" />
+                        <GridViewColumn x:Name="GenName" Header="Пол" Width="80" DisplayMemberBinding="{Binding GenName}" />
+                        <GridViewColumn x:Name="PassportSer" Header="Серия паспорта" Width="190" DisplayMemberBinding="{Binding Serial}" />
+                        <GridViewColumn x:Name="PassportNum" Header="Номер паспорта" Width="200" DisplayMemberBinding="{Binding Number}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+
+            <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Left" 
+                        VerticalAlignment="Center" 
+                        Margin="21 10 0 0">
+                <TextBlock x:Name="SRLB"
+                           Text="Поиск"
+                           FontSize="30"
+                        Style="{DynamicResource NameDispalay}">
+                </TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center" 
+                        Margin="-15 0 0 0">
+
+                <TextBox x:Name="Search"
+                               HorizontalAlignment="Center"
+                               Background="Transparent"
+                               Margin="0,0,0,0"
+                               Height="65"
+                               Width="450" 
+                                Style="{DynamicResource TextBoxes}"
+                         TextChanged="Search_TextChanged" />
+                <Button x:Name="Refresh"
+                                    Margin="10,0,150,0"
+                                    HorizontalAlignment="Center"
+                                    Width="65"
+                                    Height="65"
+                                    FontSize="24"
+                                    Click="Refresh_Click"
+                                    BorderBrush="Transparent"
+                                    Background="Transparent">
+                    <Image Source="refrash.png"></Image>
+                </Button>
+
+                <Button x:Name="AddVoters"
+                                    Margin="0,0,0,0"
+                                    HorizontalAlignment="Center"
+                                    Content="Добавить"
+                                    Width="200"
+                                    Height="65"
+                                    Style="{DynamicResource ButtonMainStyle}"
+                                    Click="ShowVoters_Click" />
+                <Button x:Name="RedVoters"
+                                    Margin="10,0,0,0"
+                                    HorizontalAlignment="Center"
+                                    Content="Редактировать"
+                                    Style="{DynamicResource ButtonMainStyle}"
+                                    Click="RedVoters_Click" />
+                
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center" 
+                        Margin="-45 20 0 0">
+                <ComboBox  x:Name="SortGender"
+                               HorizontalAlignment="Left"
+                           FontSize="32"
+                                Style="{DynamicResource Combos}"
+                               SelectionChanged="SortGender_SelectionChanged" />
+
+                <Button x:Name="DelVoters"
+                               Margin="600,0,0,0"
+                               HorizontalAlignment="Right"
+                               Content="Удалить"
+                                Style="{DynamicResource ButtonMainStyle}"
+                               Click="DelVoters_Click" />
+            </StackPanel>
+        </StackPanel>
+    
+    </Grid>
+</Page>

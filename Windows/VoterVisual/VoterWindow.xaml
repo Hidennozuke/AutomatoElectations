@@ -1,0 +1,66 @@
+﻿<Window x:Class="AutomatoElectations.Windows.VoterVisual.VoterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutomatoElectations.Windows.VoterVisual"
+        mc:Ignorable="d"
+        Icon="votes.png"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Title="Электронное голосование наблюдатель" Height="1000" Width="1800" MinHeight="900" MinWidth="1800">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="15*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="9*" />
+            <ColumnDefinition Width="25*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Rectangle
+            Grid.Row="0"
+            Grid.RowSpan="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Width="500"
+            Height="970"
+            Fill="#E3EFFC"/>
+        <StackPanel Grid.Column="1"
+                    Grid.Row="1"
+                    
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Center"
+                    Margin="0 50 50 0">
+
+            <Button x:Name="ShowCands"
+                Margin="0,0,0,40"
+                Content="Кандидаты"
+                Click="ShowCands_Click"
+                Style="{StaticResource ButtonMainStyle}"/>
+            <Button x:Name="ShowParts"
+                Margin="0,0,0,150"
+                Content="Партии"
+                Click="ShowParts_Click"
+                Style="{StaticResource ButtonMainStyle}"/>
+
+            <Button x:Name="LogOut"
+                Margin="0,0,0,60"
+                Content="Выход"
+                Click="LogOut_Click"
+                Style="{StaticResource ButtonMainStyle}"/>
+        </StackPanel>
+        <Frame x:Name="SuperList"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Center"
+               Grid.Column="2"
+               Grid.Row="1"
+               Height="850"
+               Width="1235"
+               Navigated="SuperList_Navigated" 
+               NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>

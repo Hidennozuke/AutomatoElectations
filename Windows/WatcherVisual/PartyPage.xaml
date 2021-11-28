@@ -1,0 +1,129 @@
+﻿<Page x:Class="AutomatoElectations.Windows.WatcherVisual.PartyPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AutomatoElectations.Windows.WatcherVisual"
+      mc:Ignorable="d" 
+      d:DesignHeight="850" d:DesignWidth="1235"
+      Title="PartyPage">
+
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="55*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="75*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="1"
+                    Grid.Row="1">
+
+            <TextBlock Text="Список партий"
+                       HorizontalAlignment="Center"
+                       Style="{DynamicResource NameDispalay}">
+            
+            </TextBlock>
+
+            <ListView x:Name="SuperView"
+                      BorderBrush="Transparent"
+                      Width="1150"
+                      Height="550"
+                      Margin="20,10,20,0"
+                      FontSize="20"
+                      FontFamily="Roboto"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"
+                      SelectionChanged="SuperView_SelectionChanged">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Height="350">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="1" Width="250" Margin="0 0 50 0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Image Source="{Binding PhotoPath}" HorizontalAlignment="Stretch" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="2"  Width="500" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBlock x:Name="lvSName" Text="{Binding NameParty}" FontSize="24"/>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+
+            <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Left" 
+                        VerticalAlignment="Center" 
+                        Margin="21 10 0 0">
+                <TextBlock x:Name="SRLB"
+                           Text="Поиск"
+                           FontSize="30"
+                        Style="{DynamicResource NameDispalay}">
+                </TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center" 
+                        Margin="-15 0 0 0">
+
+                <TextBox x:Name="Search"
+                               HorizontalAlignment="Center"
+                               Background="Transparent"
+                               Margin="0,0,0,0"
+                               Height="65"
+                               Width="450" 
+                                Style="{DynamicResource TextBoxes}"
+                         TextChanged="Search_TextChanged" />
+                <Button x:Name="Refresh"
+                                    Margin="10,0,150,0"
+                                    HorizontalAlignment="Center"
+                                    Width="65"
+                                    Height="65"
+                                    FontSize="24"
+                                    Click="Refresh_Click"
+                                    BorderBrush="Transparent"
+                                    Background="Transparent">
+                    <Image Source="refrash.png"></Image>
+                </Button>
+
+                <Button x:Name="AddParts"
+                                    Margin="0,0,0,0"
+                                    HorizontalAlignment="Center"
+                                    Content="Добавить"
+                                    Width="200"
+                                    Height="65"
+                                    Style="{DynamicResource ButtonMainStyle}"
+                                    Click="AddParts_Click" />
+                <Button x:Name="RedParts"
+                                    Margin="10,0,0,0"
+                                    HorizontalAlignment="Center"
+                                    Content="Редактировать"
+                                    Style="{DynamicResource ButtonMainStyle}"
+                                    Click="RedParts_Click" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Right" 
+                        VerticalAlignment="Center" 
+                        Margin="0 20 0 0">
+                <Button x:Name="DelParts"
+                               Margin="0,0,35,0"
+                               HorizontalAlignment="Right"
+                               Content="Удалить"
+                                Style="{DynamicResource ButtonMainStyle}"
+                               Click="DelParts_Click" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

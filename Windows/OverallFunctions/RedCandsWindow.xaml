@@ -75,6 +75,13 @@
                 <TextBlock 
              HorizontalAlignment="Left"
              Text="Имя"
+                    Margin="0 0 300 0"
+             Style="{StaticResource TextBoxes}"
+             />
+
+                <TextBlock 
+             HorizontalAlignment="Left"
+             Text="Партия"
              Style="{StaticResource TextBoxes}"
              />
             </WrapPanel>
@@ -102,6 +109,12 @@
                 <TextBlock 
              HorizontalAlignment="Left"
              Text="Отчество"
+                    Margin="0 0 245 0"
+             Style="{StaticResource TextBoxes}"  
+             />
+                <TextBlock 
+             HorizontalAlignment="Left"
+             Text="Пол"
              Style="{StaticResource TextBoxes}"  
              />
             </WrapPanel>

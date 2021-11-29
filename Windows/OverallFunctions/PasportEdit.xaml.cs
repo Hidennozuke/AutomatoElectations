@@ -103,13 +103,13 @@ namespace AutomatoElectations.Windows.OverallFunctions
         private void rtGivedPalce_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
           
-            e.Handled = (!Char.IsLetter(e.Text, 0) && !(Char.IsDigit(e.Text, 0))) && "@.".IndexOf(e.Text) < 0;
+            e.Handled = (!Char.IsLetter(e.Text, 0) && !(Char.IsDigit(e.Text, 0))) && "№.".IndexOf(e.Text) < 0;
         }
 
         private void rtBirthPalce_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
            
-            e.Handled = (!Char.IsLetter(e.Text, 0) && !(Char.IsDigit(e.Text, 0))) && "@.".IndexOf(e.Text) < 0;
+            e.Handled = (!Char.IsLetter(e.Text, 0) && !(Char.IsDigit(e.Text, 0))) && "№.".IndexOf(e.Text) < 0;
         }
     }
 }

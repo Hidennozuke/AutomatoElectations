@@ -19,37 +19,46 @@ namespace AutomatoElectations
 
         private void Enter_Click(object sender, RoutedEventArgs e)
         {
-            var logging = Connect.Context.Member.Where(i => i.Login == Log1.Text && i.Password == Pas1.Password && i.IsDeleted == false).FirstOrDefault();
-
-            if (Log1.ToString() != "" && Pas1.ToString() != "" && logging != null)
+            try
             {
-                switch (logging.IdRole)
+                var logging = Connect.Context.Member.Where(i => i.Login == Log1.Text && i.Password == Pas1.Password && i.IsDeleted == false).FirstOrDefault();
+
+                if (Log1.ToString() != "" && Pas1.ToString() != "" && logging != null)
                 {
-                    case 1:
-                        Watcher wW = new Watcher();
-                        wW.Show();
-                        Connect.idActualRole = 1;
-                        Connect.idActualUser = logging.ComID;
-                        this.Close();
-                        break;
+                    switch (logging.IdRole)
+                    {
+                        case 1:
+                            Watcher wW = new Watcher();
+                            wW.Show();
+                            Connect.idActualRole = 1;
+                            Connect.idActualUser = logging.ComID;
+                            this.Close();
+                            break;
 
-                    case 2:
-                        VoterWindow vW = new VoterWindow();
-                        vW.Show();
-                        Connect.idActualRole = 2;
-                        Connect.idActualUser = logging.ComID;
-                        this.Close();
-                        break;
+                        case 2:
+                            VoterWindow vW = new VoterWindow();
+                            vW.Show();
+                            Connect.idActualRole = 2;
+                            Connect.idActualUser = logging.ComID;
+                            this.Close();
+                            break;
 
-                    default:
+                        default:
 
-                        break;
+                            break;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Неверные данные для входа");
                 }
             }
-            else
+            catch (System.Exception)
             {
-                MessageBox.Show("Неверные данные для входа");
+                MessageBox.Show("Ошибка соедения!");
+                return;
             }
+            
         }
 
         

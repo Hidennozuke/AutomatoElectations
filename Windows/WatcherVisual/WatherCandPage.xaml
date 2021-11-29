@@ -14,6 +14,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
             <RowDefinition Height="55*" />
+            
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -53,6 +54,7 @@
                                 <ColumnDefinition Width="1*" />
                                 <ColumnDefinition Width="3*" />
                             </Grid.ColumnDefinitions>
+                            
                             <StackPanel Grid.Column="1" Width="250" Margin="0 0 50 0" VerticalAlignment="Center" HorizontalAlignment="Center">
                                 <Image Source="{Binding PhotoPath}" HorizontalAlignment="Stretch" />
                             </StackPanel>
@@ -63,12 +65,18 @@
                                 <TextBlock x:Name="lvPName" Text="{Binding PName}" FontSize="24"/>
                             </StackPanel>
                             
-                            <StackPanel Grid.Column="3" Width="25" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <TextBlock x:Name="lvGenName" Text="{Binding GenName}" FontSize="20" />
+                            <StackPanel Grid.Column="3" Width="100" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="Пол:" FontSize="20" />
+                                    <TextBlock x:Name="lvGenName" Text="{Binding GenName}" FontSize="20" />
+                                </StackPanel>
                             </StackPanel>
 
-                            <StackPanel Grid.Column="4" Width="490" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <TextBlock x:Name="lvParty" Text="{Binding NameParty}" FontSize="20" />
+                            <StackPanel Grid.Column="4" Width="490" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="25 0 0 0">
+                                <StackPanel Orientation="Vertical">
+                                     <TextBlock Text="Партия:" FontSize="20" />
+                                     <TextBlock x:Name="lvParty" Text="{Binding NameParty}" FontSize="20" />
+                                </StackPanel>
                             </StackPanel>
 
                         </Grid>
@@ -77,22 +85,17 @@
             </ListView>
 
 
-
-            <StackPanel Orientation="Horizontal" 
+            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical" 
                         HorizontalAlignment="Left" 
                         VerticalAlignment="Center" 
                         Margin="21 10 0 0">
                 <TextBlock x:Name="SRLB"
                            Text="Поиск"
                            FontSize="30"
+                           Margin="0 0 0 10"
                         Style="{DynamicResource NameDispalay}">
                 </TextBlock>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" 
-                        HorizontalAlignment="Center" 
-                        VerticalAlignment="Center" 
-                        Margin="-15 0 0 0">
-
                 <TextBox x:Name="Search"
                                HorizontalAlignment="Center"
                                Background="Transparent"
@@ -101,8 +104,16 @@
                                Width="450" 
                                 Style="{DynamicResource TextBoxes}"
                          TextChanged="Search_TextChanged" />
-                <Button x:Name="Refresh"
-                                    Margin="10,0,150,0"
+                <ComboBox  x:Name="SortGender"
+                               HorizontalAlignment="Left"
+                           FontSize="32"
+                            Margin="0 10 0 0"
+                                Style="{DynamicResource Combos}"
+                               SelectionChanged="SortGender_SelectionChanged" />
+            </StackPanel>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10 0 10 10">
+                    <Button x:Name="Refresh"
+                                    Margin="0,0,0,0"
                                     HorizontalAlignment="Center"
                                     Width="65"
                                     Height="65"
@@ -110,10 +121,14 @@
                                     Click="Refresh_Click"
                                     BorderBrush="Transparent"
                                     Background="Transparent">
-                    <Image Source="refrash.png"></Image>
-                </Button>
-
-                <Button x:Name="AddCands"
+                        <Image Source="refrash.png"></Image>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center" 
+                        Margin="130 0 0 0">
+                    <Button x:Name="AddCands"
                                     Margin="0,0,0,0"
                                     HorizontalAlignment="Center"
                                     Content="Добавить"
@@ -121,34 +136,32 @@
                                     Height="65"
                                     Style="{DynamicResource ButtonMainStyle}"
                                     Click="AddCands_Click" />
-                <Button x:Name="RedCands"
+                    <Button x:Name="Vote"
+                        Content="Голосовать"
+                        Click="Vote_Click"
+                        Margin="0 0 0 0"
+                        Style="{DynamicResource ButtonMainStyle}"/>
+                </StackPanel>
+            <StackPanel Orientation="Vertical" 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center" 
+                        Margin="0 0 0 0">
+
+                    <Button x:Name="RedCands"
                                     Margin="10,0,0,0"
                                     HorizontalAlignment="Center"
                                     Content="Редактировать"
                                     Style="{DynamicResource ButtonMainStyle}"
                                     Click="RedCands_Click" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" 
-                        HorizontalAlignment="Center" 
-                        VerticalAlignment="Center" 
-                        Margin="-45 20 0 0">
-                <ComboBox  x:Name="SortGender"
-                               HorizontalAlignment="Left"
-                           FontSize="32"
-                                Style="{DynamicResource Combos}"
-                               SelectionChanged="SortGender_SelectionChanged" />
-                <Button x:Name="Vote"
-                        Content="Голосовать"
-                        Click="Vote_Click"
-                        Margin="0 0 0 0"
-                        Style="{DynamicResource ButtonMainStyle}"/>
-                <Button x:Name="DelCands"
-                               Margin="340,0,0,0"
+
+                    <Button x:Name="DelCands"
+                               Margin="0,0,0,0"
                                HorizontalAlignment="Right"
                                Content="Удалить"
                                 Style="{DynamicResource ButtonMainStyle}"
                                Click="DelCands_Click" />
             </StackPanel>
+        </StackPanel>
         </StackPanel>
     </Grid>
 </Page>

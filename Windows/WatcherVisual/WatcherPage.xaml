@@ -43,9 +43,9 @@
                         <GridViewColumn x:Name="SName" Header="Фамилия" Width="220" DisplayMemberBinding="{Binding SName}"/>
                         <GridViewColumn x:Name="FName" Header="Имя" Width="220" DisplayMemberBinding="{Binding FName}" />
                         <GridViewColumn x:Name="PName" Header="Отчество" Width="220" DisplayMemberBinding="{Binding PName}" />
-                        <GridViewColumn x:Name="GenName" Header="Пол" Width="80" DisplayMemberBinding="{Binding GenName}" />
-                        <GridViewColumn x:Name="PassportSer" Header="Серия паспорта" Width="190" DisplayMemberBinding="{Binding Serial}" />
-                        <GridViewColumn x:Name="PassportNum" Header="Номер паспорта" Width="200" DisplayMemberBinding="{Binding Number}" />
+                        <GridViewColumn x:Name="GenName" Header="Пол" Width="100" DisplayMemberBinding="{Binding GenName}" />
+                        <GridViewColumn x:Name="PassportSer" Header="Серия паспорта" Width="185" DisplayMemberBinding="{Binding Serial}" />
+                        <GridViewColumn x:Name="PassportNum" Header="Номер паспорта" Width="185" DisplayMemberBinding="{Binding Number}" />
                     </GridView>
                 </ListView.View>
             </ListView>

@@ -35,9 +35,9 @@ namespace AutomatoElectations.Windows.WatcherVisual
         {
             //Поиск   
             var list = Connect.Context.VotersCurrentDisplay.Where(i=>i.IsDeleted != true && i.IdRole == 2 ).ToList().Where(i => 
-            i.SName.ToLower().Contains(Search.Text) || 
-            i.FName.ToLower().Contains(Search.Text) || 
-            i.PName.ToLower().Contains(Search.Text) || 
+            i.SName.ToLower().Contains(Search.Text.ToLower()) || 
+            i.FName.ToLower().Contains(Search.Text.ToLower()) || 
+            i.PName.ToLower().Contains(Search.Text.ToLower()) || 
             i.PassportNum.ToString().Contains(Search.Text)).ToList();
 
             //Сотиравка (пол)

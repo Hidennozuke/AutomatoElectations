@@ -130,9 +130,15 @@
             Grid.Column="1" HorizontalAlignment="Right">
                 <TextBlock 
              HorizontalAlignment="Left"
+             Text="Пол"
+             Style="{StaticResource TextBoxes}"
+                    Margin="0 0 310 0"
+             />
+                <TextBlock 
+             HorizontalAlignment="Left"
              Text="Повторите пароль"
              Style="{StaticResource TextBoxes}"
-                    Margin="0 0 45 0"
+                    Margin="0 0 50 0"
              />
             </WrapPanel>
             <WrapPanel
